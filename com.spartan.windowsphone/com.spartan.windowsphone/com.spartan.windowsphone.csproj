@@ -93,15 +93,39 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="changePass.xaml.cs">
+      <DependentUpon>changePass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTeam.xaml.cs">
+      <DependentUpon>CreateTeam.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EventCreatexaml.xaml.cs">
       <DependentUpon>EventCreatexaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="EventSearch.xaml.cs">
       <DependentUpon>EventSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JoinTeam.xaml.cs">
+      <DependentUpon>JoinTeam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JoinTournament.xaml.cs">
+      <DependentUpon>JoinTournament.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyEvents.xaml.cs">
+      <DependentUpon>MyEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyTeams.xaml.cs">
+      <DependentUpon>MyTeams.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyTournaments.xaml.cs">
+      <DependentUpon>MyTournaments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="newTournament.xaml.cs">
+      <DependentUpon>newTournament.xaml</DependentUpon>
     </Compile>
     <Compile Include="NoRegistration.xaml.cs">
       <DependentUpon>NoRegistration.xaml</DependentUpon>
@@ -116,6 +140,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sessionKey.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewAssistences.xaml.cs">
+      <DependentUpon>ReviewAssistences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="searchPublicEvent.xaml.cs">
+      <DependentUpon>searchPublicEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
@@ -134,11 +164,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="changePass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateTeam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EventCreatexaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EventSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JoinTeam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JoinTournament.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,7 +196,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
+    <Page Include="MyEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyTeams.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyTournaments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="newTournament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NoRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReviewAssistences.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="searchPublicEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

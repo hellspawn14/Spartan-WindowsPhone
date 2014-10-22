@@ -1,0 +1,18 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="AuthentificationServiceImplPortBinding" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://192.168.0.26:9876/Auth" binding="basicHttpBinding"
+                bindingConfiguration="AuthentificationServiceImplPortBinding"
+                contract="AutentificationService.AuthentificationService"
+                name="AuthentificationServiceImplPort" />
+        </client>
+    </system.serviceModel>
+</configuration>

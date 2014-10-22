@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     x:Class="com.spartan.windowsphone.EventSearch"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -30,7 +31,7 @@
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" RenderTransformOrigin="0.132,0.201" Margin="0,10,0,-10">
                 <Image Source="Resources/ball_basket_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
                 <Image Source="Resources/ball_soccer_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
-
+                <toolkit:DateTimePickerBase></toolkit:DateTimePickerBase>
                 <Image Source="Resources/ball_voley_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
                 <Image Source="Resources/ball_tennis_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
 

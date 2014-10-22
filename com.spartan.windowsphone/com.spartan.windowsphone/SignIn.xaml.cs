@@ -17,10 +17,37 @@ namespace com.spartan.windowsphone
             InitializeComponent();
         }
 
+        //Llamar a servicio web para hacer log in
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Ola ke ase");
+            if (this.UserText.Text.Equals("User name") || this.UserText.Text.Equals("") || this.UserText.Text.Equals(""))
+            {
+                MessageBox.Show("Use a valid user name or password");
+            }
+            else
+            {
+                AutentificationService.AuthentificationServiceClient client = new AutentificationService.AuthentificationServiceClient();
+                client.logInCompleted += client_testCompleted;
+                client.logInAsync(this.UserText.Text, this.PassText.Password);
+            }
+            
         }
+
+        private void client_testCompleted(object sender, AutentificationService.logInCompletedEventArgs e)
+        {
+            String res = e.Result.ToString();
+            if(res.Equals("0"))
+            {
+                MessageBox.Show("Invalid user or password");
+            }
+            else
+            {
+                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                //TODO ESCRIBIR ARCHIVO 
+
+            }
+        }
+        
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

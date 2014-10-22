@@ -37,8 +37,8 @@
 
             <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top" Grid.ColumnSpan="3">
                 <TextBlock Text="Log in" TextAlignment="Center"/>
-                <TextBox Text="User name"/>
-                <PasswordBox  Password="Password"/>
+                <TextBox Text="User name" Name="UserText"/>
+                <PasswordBox  Password="Password" Name="PassText"/>
                 <Button Content="Log in" Background="#FF175E99" Click="Button_Click"/>
                 <TextBlock Text="Don't have an account" TextAlignment="Center"/>
                 <Button Content="Sign up" Background="#FF175E99" Click="Button_Click_1"/>

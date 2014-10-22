@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://authentification.services.server.spartan.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="AuthentificationServiceImplService" targetNamespace="http://authentification.services.server.spartan.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="changePassword">
+    <part name="arg0" type="xsd:string" />
+    <part name="arg1" type="xsd:string" />
+    <part name="arg2" type="xsd:string" />
+  </message>
+  <message name="changePasswordResponse">
+    <part name="return" type="xsd:string" />
+  </message>
+  <message name="logIn">
+    <part name="arg0" type="xsd:string" />
+    <part name="arg1" type="xsd:string" />
+  </message>
+  <message name="logInResponse">
+    <part name="return" type="xsd:int" />
+  </message>
+  <portType name="AuthentificationService">
+    <operation name="changePassword" parameterOrder="arg0 arg1 arg2">
+      <input wsam:Action="http://authentification.services.server.spartan.com/AuthentificationService/changePasswordRequest" message="tns:changePassword" />
+      <output wsam:Action="http://authentification.services.server.spartan.com/AuthentificationService/changePasswordResponse" message="tns:changePasswordResponse" />
+    </operation>
+    <operation name="logIn" parameterOrder="arg0 arg1">
+      <input wsam:Action="http://authentification.services.server.spartan.com/AuthentificationService/logInRequest" message="tns:logIn" />
+      <output wsam:Action="http://authentification.services.server.spartan.com/AuthentificationService/logInResponse" message="tns:logInResponse" />
+    </operation>
+  </portType>
+  <binding name="AuthentificationServiceImplPortBinding" type="tns:AuthentificationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="changePassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://authentification.services.server.spartan.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://authentification.services.server.spartan.com/" />
+      </output>
+    </operation>
+    <operation name="logIn">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://authentification.services.server.spartan.com/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://authentification.services.server.spartan.com/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AuthentificationServiceImplService">
+    <port name="AuthentificationServiceImplPort" binding="tns:AuthentificationServiceImplPortBinding">
+      <soap:address location="http://192.168.0.26:9876/Auth" />
+    </port>
+  </service>
+</definitions>

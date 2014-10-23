@@ -10,16 +10,11 @@ using Microsoft.Phone.Shell;
 
 namespace com.spartan.windowsphone
 {
-    public partial class NoRegistration : PhoneApplicationPage
+    public partial class JoinTeam : PhoneApplicationPage
     {
-        public NoRegistration()
+        public JoinTeam()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/searchPublicEvent.xaml", UriKind.Relative));
         }
     }
 }

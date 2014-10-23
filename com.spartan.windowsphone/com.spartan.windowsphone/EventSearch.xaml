@@ -28,40 +28,35 @@
         </StackPanel>
 
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" RenderTransformOrigin="0.132,0.201" Margin="0,10,0,-10">
-                <Image Source="Resources/ball_basket_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
-                <Image Source="Resources/ball_soccer_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
-                <toolkit:DateTimePickerBase></toolkit:DateTimePickerBase>
-                <Image Source="Resources/ball_voley_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
-                <Image Source="Resources/ball_tennis_button_focused.png" VerticalAlignment="Top" Height="100" Width="100" Margin="10,0,0,0"/>
-
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" RenderTransformOrigin="0.132,0.201" Margin="0,10,0,511" Width="456" Grid.ColumnSpan="4" Grid.RowSpan="3" >
+                <Image Source="Resources/ball_basket_button_focused.png" VerticalAlignment="Top" Height="80" Width="115" Margin="0,0,0,0"/>
+                <Image Source="Resources/ball_soccer_button_focused.png" VerticalAlignment="Top" Height="80" Width="114" Margin="0,0,0,0"/>
+                <Image Source="Resources/ball_voley_button_focused.png" VerticalAlignment="Top" Height="80" Width="115" Margin="0,0,0,0"/>
+                <Image Source="Resources/ball_tennis_button_focused.png" VerticalAlignment="Top" Height="80" Width="114" Margin="0,0,0,0"/>
             </StackPanel>
-            <RadioButton x:Name="Basketball" Margin="31,84,370,446" />
-            <RadioButton x:Name="Soccer" Margin="141,84,260,446" />
-            <RadioButton x:Name="Voleyball" Margin="252,84,149,446" />
-            <RadioButton x:Name="Tennis" Margin="362,84,39,446" />
-            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" RenderTransformOrigin="0.132,0.201" Margin="10,139,0,400" Width="446">
-                <TextBox Margin="0,0,0,0" Width="140"  />
-                <TextBox Margin="0,0,0,0" Width="140"  />
-                <TextBox Margin="0,0,0,0" Width="140"  />
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" RenderTransformOrigin="0.132,0.201" Margin="10,207,0,370" Width="446">
-                <TextBlock Text="Year" Margin="0,0,0,0" Width="140" TextAlignment="Center" />
-                <TextBlock Text="Month" Margin="0,0,0,0" Width="140" TextAlignment="Center" />
-                <TextBlock Text="Day" Margin="0,0,0,0" Width="140" TextAlignment="Center" />
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" RenderTransformOrigin="0.132,0.201" Margin="79,237,94,292" Width="283">
-                <TextBox Margin="0,0,0,0" Width="140"  />
-                <TextBox Margin="0,0,0,0" Width="140"  />
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" RenderTransformOrigin="0.132,0.201" Margin="79,315,0,250" Width="271">
-                <TextBlock Text="Hour" Margin="0,0,0,0" Width="140" TextAlignment="Center" />
-                <TextBlock Text="Minute" Margin="0,0,0,0" Width="140" TextAlignment="Center" />
-            </StackPanel>
+            <!--Controles de seleccion de eventos-->
+            <RadioButton x:Name="Basketball"  Margin="29,48,366,449" RenderTransformOrigin="0.508,0.5" />
+            <RadioButton x:Name="Soccer"  Margin="144,48,251,449" RenderTransformOrigin="0.508,0.5" />
+            <RadioButton x:Name="Voleyball"  Margin="258,48,137,449" RenderTransformOrigin="0.508,0.5" />
+            <RadioButton x:Name="Tennis"  Margin="368,48,27,449" RenderTransformOrigin="0.508,0.5" />
+            <!---Datos del evento-->
+            <phone:LongListSelector Margin="0,123,0,97" Name="EventResultado">
+            <phone:LongListSelector.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="12,2,0,4" Height="105" Width="432">
+                        <!--Reemplazar el rectángulo por la imagen-->
+                        <Button Content="Go" Width="99" Height="99" BorderBrush="#FF00787E" Background="#FF00787E" Click="Button_Click_1"/>
+                        <StackPanel Width="311" Margin="8,-7,0,0">
+                            <TextBlock Text="{Binding description}" TextWrapping="Wrap" Margin="10,0" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
+                            <TextBlock Text="{Binding place}" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock Text="{Binding date}" TextWrapping="Wrap" Margin="10,-2,20,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                            </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
             <!--ContentPanel - place additional content here-->
-            <Grid Name="ContentPanelMap" Margin="8,345,10,92" Height="170">
-                <maps:Map Margin="0,361,0,95" Name="MyMap" Height="100" Width="100"/>
-            </Grid>
+            
             <Button Content="Search" Margin="0,515,0,0" Background="#FF1A58C5" Click="Button_Click"/>
         </Grid>
 

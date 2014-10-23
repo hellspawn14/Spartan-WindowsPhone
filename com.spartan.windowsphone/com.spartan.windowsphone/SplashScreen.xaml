@@ -24,7 +24,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" VerticalAlignment="Center">
             <Image HorizontalAlignment="Center" Height="500"  VerticalAlignment="Center" Width="500" Source="Resources/spartan_icon.png"/>
         </Grid>
-        <Button Content="Let's start" HorizontalAlignment="Left" Margin="10,686,0,0" Grid.Row="1" VerticalAlignment="Top" Width="458" Click="Button_Click" Name="BtnStart"/>
+        <Button Content="Start" Click="Button_Click_1" Margin="0,686,0,0" Grid.Row="1"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

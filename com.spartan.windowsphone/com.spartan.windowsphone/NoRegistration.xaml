@@ -7,44 +7,29 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
-    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
     <Grid x:Name="LayoutRoot" Background="#FF005789">
         <!--Control Panorama-->
         <phone:Panorama Title="Spartan 5">
             <!--Pantalla de eventos-->
-            <phone:PanoramaItem Header="Events" >
-
-            </phone:PanoramaItem>
-
-            <!--Pantalla de equipos-->
-            <phone:PanoramaItem Header="Teams" >
-                
-            </phone:PanoramaItem>
-
-            <!--Pantalla de torneos-->
-            <phone:PanoramaItem Header="Tournaments" >
-
-            </phone:PanoramaItem>
-
-            <!--Pantalla de asistencias-->
-            <phone:PanoramaItem Header="Assistences" >
-
-            </phone:PanoramaItem>
-
-            <!--Pantalla de perfil-->
-            <phone:PanoramaItem Header="Profile" >
-
-            </phone:PanoramaItem>
-
-            <!--Pantalla de settings-->
-            <phone:PanoramaItem Header="Settings" >
+            <phone:PanoramaItem Header="Events" Orientation="Horizontal">
+                <Grid>
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        <TextBlock Text="Public catalog"  TextAlignment="Center" Height="220" Width="173" Margin="30,0,0,0" HorizontalAlignment="Center"/>
+                        
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        
+                        <Button Background="#FF3996D6" BorderBrush="Transparent" VerticalContentAlignment="Bottom" Height="200" Width="200" Margin="0,0,0,0" Click="Button_Click">
+                            <Image Source="Resources/publicCatalog.png"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
 
             </phone:PanoramaItem>
 

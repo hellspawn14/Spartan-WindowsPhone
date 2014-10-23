@@ -19,13 +19,13 @@ namespace com.spartan.windowsphone.AutentificationService {
     public interface AuthentificationService {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://authentification.services.server.spartan.com/AuthentificationService/chang" +
-            "ePasswordRequest", ReplyAction="http://authentification.services.server.spartan.com/AuthentificationService/chang" +
-            "ePasswordResponse")]
+            "ePassRequest", ReplyAction="http://authentification.services.server.spartan.com/AuthentificationService/chang" +
+            "ePassResponse")]
         [System.ServiceModel.DataContractFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc)]
-        System.IAsyncResult BeginchangePassword(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginchangePass(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        string EndchangePassword(System.IAsyncResult result);
+        string EndchangePass(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://authentification.services.server.spartan.com/AuthentificationService/logIn" +
             "Request", ReplyAction="http://authentification.services.server.spartan.com/AuthentificationService/logIn" +
@@ -35,6 +35,15 @@ namespace com.spartan.windowsphone.AutentificationService {
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         int EndlogIn(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://authentification.services.server.spartan.com/AuthentificationService/chang" +
+            "ePasswordRequest", ReplyAction="http://authentification.services.server.spartan.com/AuthentificationService/chang" +
+            "ePasswordResponse")]
+        [System.ServiceModel.DataContractFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc)]
+        System.IAsyncResult BeginchangePassword(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState);
+        
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string EndchangePassword(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -43,11 +52,11 @@ namespace com.spartan.windowsphone.AutentificationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class changePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class changePassCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public changePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public changePassCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -81,19 +90,44 @@ namespace com.spartan.windowsphone.AutentificationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class changePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public changePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class AuthentificationServiceClient : System.ServiceModel.ClientBase<com.spartan.windowsphone.AutentificationService.AuthentificationService>, com.spartan.windowsphone.AutentificationService.AuthentificationService {
         
-        private BeginOperationDelegate onBeginchangePasswordDelegate;
+        private BeginOperationDelegate onBeginchangePassDelegate;
         
-        private EndOperationDelegate onEndchangePasswordDelegate;
+        private EndOperationDelegate onEndchangePassDelegate;
         
-        private System.Threading.SendOrPostCallback onchangePasswordCompletedDelegate;
+        private System.Threading.SendOrPostCallback onchangePassCompletedDelegate;
         
         private BeginOperationDelegate onBeginlogInDelegate;
         
         private EndOperationDelegate onEndlogInDelegate;
         
         private System.Threading.SendOrPostCallback onlogInCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginchangePasswordDelegate;
+        
+        private EndOperationDelegate onEndchangePasswordDelegate;
+        
+        private System.Threading.SendOrPostCallback onchangePasswordCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -148,13 +182,113 @@ namespace com.spartan.windowsphone.AutentificationService {
             }
         }
         
-        public event System.EventHandler<changePasswordCompletedEventArgs> changePasswordCompleted;
+        public event System.EventHandler<changePassCompletedEventArgs> changePassCompleted;
         
         public event System.EventHandler<logInCompletedEventArgs> logInCompleted;
+        
+        public event System.EventHandler<changePasswordCompletedEventArgs> changePasswordCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult com.spartan.windowsphone.AutentificationService.AuthentificationService.BeginchangePass(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginchangePass(arg0, arg1, arg2, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        string com.spartan.windowsphone.AutentificationService.AuthentificationService.EndchangePass(System.IAsyncResult result) {
+            return base.Channel.EndchangePass(result);
+        }
+        
+        private System.IAsyncResult OnBeginchangePass(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string arg0 = ((string)(inValues[0]));
+            string arg1 = ((string)(inValues[1]));
+            string arg2 = ((string)(inValues[2]));
+            return ((com.spartan.windowsphone.AutentificationService.AuthentificationService)(this)).BeginchangePass(arg0, arg1, arg2, callback, asyncState);
+        }
+        
+        private object[] OnEndchangePass(System.IAsyncResult result) {
+            string retVal = ((com.spartan.windowsphone.AutentificationService.AuthentificationService)(this)).EndchangePass(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnchangePassCompleted(object state) {
+            if ((this.changePassCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.changePassCompleted(this, new changePassCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void changePassAsync(string arg0, string arg1, string arg2) {
+            this.changePassAsync(arg0, arg1, arg2, null);
+        }
+        
+        public void changePassAsync(string arg0, string arg1, string arg2, object userState) {
+            if ((this.onBeginchangePassDelegate == null)) {
+                this.onBeginchangePassDelegate = new BeginOperationDelegate(this.OnBeginchangePass);
+            }
+            if ((this.onEndchangePassDelegate == null)) {
+                this.onEndchangePassDelegate = new EndOperationDelegate(this.OnEndchangePass);
+            }
+            if ((this.onchangePassCompletedDelegate == null)) {
+                this.onchangePassCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnchangePassCompleted);
+            }
+            base.InvokeAsync(this.onBeginchangePassDelegate, new object[] {
+                        arg0,
+                        arg1,
+                        arg2}, this.onEndchangePassDelegate, this.onchangePassCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult com.spartan.windowsphone.AutentificationService.AuthentificationService.BeginlogIn(string arg0, string arg1, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginlogIn(arg0, arg1, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        int com.spartan.windowsphone.AutentificationService.AuthentificationService.EndlogIn(System.IAsyncResult result) {
+            return base.Channel.EndlogIn(result);
+        }
+        
+        private System.IAsyncResult OnBeginlogIn(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string arg0 = ((string)(inValues[0]));
+            string arg1 = ((string)(inValues[1]));
+            return ((com.spartan.windowsphone.AutentificationService.AuthentificationService)(this)).BeginlogIn(arg0, arg1, callback, asyncState);
+        }
+        
+        private object[] OnEndlogIn(System.IAsyncResult result) {
+            int retVal = ((com.spartan.windowsphone.AutentificationService.AuthentificationService)(this)).EndlogIn(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnlogInCompleted(object state) {
+            if ((this.logInCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.logInCompleted(this, new logInCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void logInAsync(string arg0, string arg1) {
+            this.logInAsync(arg0, arg1, null);
+        }
+        
+        public void logInAsync(string arg0, string arg1, object userState) {
+            if ((this.onBeginlogInDelegate == null)) {
+                this.onBeginlogInDelegate = new BeginOperationDelegate(this.OnBeginlogIn);
+            }
+            if ((this.onEndlogInDelegate == null)) {
+                this.onEndlogInDelegate = new EndOperationDelegate(this.OnEndlogIn);
+            }
+            if ((this.onlogInCompletedDelegate == null)) {
+                this.onlogInCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnlogInCompleted);
+            }
+            base.InvokeAsync(this.onBeginlogInDelegate, new object[] {
+                        arg0,
+                        arg1}, this.onEndlogInDelegate, this.onlogInCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult com.spartan.windowsphone.AutentificationService.AuthentificationService.BeginchangePassword(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState) {
@@ -204,54 +338,6 @@ namespace com.spartan.windowsphone.AutentificationService {
                         arg0,
                         arg1,
                         arg2}, this.onEndchangePasswordDelegate, this.onchangePasswordCompletedDelegate, userState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult com.spartan.windowsphone.AutentificationService.AuthentificationService.BeginlogIn(string arg0, string arg1, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginlogIn(arg0, arg1, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int com.spartan.windowsphone.AutentificationService.AuthentificationService.EndlogIn(System.IAsyncResult result) {
-            return base.Channel.EndlogIn(result);
-        }
-        
-        private System.IAsyncResult OnBeginlogIn(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string arg0 = ((string)(inValues[0]));
-            string arg1 = ((string)(inValues[1]));
-            return ((com.spartan.windowsphone.AutentificationService.AuthentificationService)(this)).BeginlogIn(arg0, arg1, callback, asyncState);
-        }
-        
-        private object[] OnEndlogIn(System.IAsyncResult result) {
-            int retVal = ((com.spartan.windowsphone.AutentificationService.AuthentificationService)(this)).EndlogIn(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnlogInCompleted(object state) {
-            if ((this.logInCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.logInCompleted(this, new logInCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void logInAsync(string arg0, string arg1) {
-            this.logInAsync(arg0, arg1, null);
-        }
-        
-        public void logInAsync(string arg0, string arg1, object userState) {
-            if ((this.onBeginlogInDelegate == null)) {
-                this.onBeginlogInDelegate = new BeginOperationDelegate(this.OnBeginlogIn);
-            }
-            if ((this.onEndlogInDelegate == null)) {
-                this.onEndlogInDelegate = new EndOperationDelegate(this.OnEndlogIn);
-            }
-            if ((this.onlogInCompletedDelegate == null)) {
-                this.onlogInCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnlogInCompleted);
-            }
-            base.InvokeAsync(this.onBeginlogInDelegate, new object[] {
-                        arg0,
-                        arg1}, this.onEndlogInDelegate, this.onlogInCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -330,18 +416,18 @@ namespace com.spartan.windowsphone.AutentificationService {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginchangePassword(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginchangePass(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[3];
                 _args[0] = arg0;
                 _args[1] = arg1;
                 _args[2] = arg2;
-                System.IAsyncResult _result = base.BeginInvoke("changePassword", _args, callback, asyncState);
+                System.IAsyncResult _result = base.BeginInvoke("changePass", _args, callback, asyncState);
                 return _result;
             }
             
-            public string EndchangePassword(System.IAsyncResult result) {
+            public string EndchangePass(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                string _result = ((string)(base.EndInvoke("changePassword", _args, result)));
+                string _result = ((string)(base.EndInvoke("changePass", _args, result)));
                 return _result;
             }
             
@@ -356,6 +442,21 @@ namespace com.spartan.windowsphone.AutentificationService {
             public int EndlogIn(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 int _result = ((int)(base.EndInvoke("logIn", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginchangePassword(string arg0, string arg1, string arg2, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[3];
+                _args[0] = arg0;
+                _args[1] = arg1;
+                _args[2] = arg2;
+                System.IAsyncResult _result = base.BeginInvoke("changePassword", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public string EndchangePassword(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                string _result = ((string)(base.EndInvoke("changePassword", _args, result)));
                 return _result;
             }
         }

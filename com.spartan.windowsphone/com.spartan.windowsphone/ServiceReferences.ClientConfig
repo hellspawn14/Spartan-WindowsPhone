@@ -6,6 +6,14 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="UserServiceImplPortBinding" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="EventServiceImplPortBinding" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
         </bindings>
         <client>
@@ -13,6 +21,12 @@
                 bindingConfiguration="AuthentificationServiceImplPortBinding"
                 contract="AutentificationService.AuthentificationService"
                 name="AuthentificationServiceImplPort" />
+            <endpoint address="http://192.168.0.26:9877/Register" binding="basicHttpBinding"
+                bindingConfiguration="UserServiceImplPortBinding" contract="RegistrationService.UserService"
+                name="UserServiceImplPort" />
+            <endpoint address="http://192.168.0.26:9878/Event" binding="basicHttpBinding"
+                bindingConfiguration="EventServiceImplPortBinding" contract="RegularEventService.EventService"
+                name="EventServiceImplPort" />
         </client>
     </system.serviceModel>
 </configuration>

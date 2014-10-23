@@ -34,14 +34,14 @@
 
             <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top" Grid.ColumnSpan="3">
                 <TextBlock Text="User name" TextAlignment="Center"/>
-                <TextBox Text="User name"/>
+                <TextBox Text="User name" Name="UserText"/>
                 <TextBlock Text="Phone number" TextAlignment="Center"/>
-                <TextBox Text="Phone number"/>
+                <TextBox Text="Phone number" Name="PhoneText"/>
                 <TextBlock Text="Password" TextAlignment="Center"/>
-                <PasswordBox  Password="Password"/>
+                <PasswordBox  Password="Password" Name="P1"/>
                 <TextBlock Text="Confirm password" TextAlignment="Center"/>
-                <PasswordBox  Password="Password"/>
-                <Button Content="Sign up" Background="#FF175E99"/>
+                <PasswordBox  Password="Password" Name="P2"/>
+                <Button Content="Sign up" Background="#FF175E99" Click="Button_Click"/>
             </StackPanel>
         </Grid>
 

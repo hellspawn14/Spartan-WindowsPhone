@@ -33,7 +33,7 @@
                 <PasswordBox Name="oldPass"/>
                 <TextBlock Text="New password" TextAlignment="Center"/>
                 <PasswordBox Name="nwPass"/>
-                <Button Content="Change password"/>
+                <Button Content="Change password" Click="Button_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

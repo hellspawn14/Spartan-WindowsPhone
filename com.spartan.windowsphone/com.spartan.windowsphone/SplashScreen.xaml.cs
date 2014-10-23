@@ -12,13 +12,10 @@ using System.Resources;
 using System.Reflection;
 using Windows.Storage;
 
-using System;
 using System.Device.Location;
-using System.IO;
 using System.IO.IsolatedStorage;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
-using Windows.Storage;
 
 namespace com.spartan.windowsphone
 {
@@ -31,11 +28,16 @@ namespace com.spartan.windowsphone
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
             String ans = "";
             StorageFolder foldera = ApplicationData.Current.LocalFolder;
             try
             {
-                var ResrouceStream = App.GetResourceStream(new Uri("Resources/SessionKey.txt", UriKind.Relative));
+                var ResrouceStream = App.GetResourceStream(new Uri("SessionKey.txt", UriKind.Relative));
                 Stream myFileStream = ResrouceStream.Stream;
                 // Read the data.
                 using (StreamReader streamReader = new StreamReader(myFileStream))
@@ -45,8 +47,9 @@ namespace com.spartan.windowsphone
                     myFileStream.Close();
                     ans = line.Trim();
                 }
-                
-                if (ans.Equals("0"))
+
+                int res = Convert.ToInt32(ans);
+                if (res == 0)
                 {
                     NavigationService.Navigate(new Uri("/SignIn.xaml", UriKind.Relative));
                 }

@@ -44,19 +44,6 @@
 
             </phone:PanoramaItem>
 
-            <!--Pantalla de asistencias-->
-            <phone:PanoramaItem Header="Assistences" Orientation="Horizontal">
-                <Grid>
-                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                        <TextBlock Text="Review"  TextAlignment="Center" Height="220" Width="173" Margin="15,0,0,0" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                        <Button Background="#FF3996D6" BorderBrush="Transparent" VerticalContentAlignment="Bottom" Height="200" Width="205" Margin="0,0,0,0" Click="Button_Click_10">
-                            <Image Source="Resources/reviewAssistences.png"/>
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </phone:PanoramaItem>
 
             <!--Pantalla de perfil-->
             <phone:PanoramaItem Header="Profile" >

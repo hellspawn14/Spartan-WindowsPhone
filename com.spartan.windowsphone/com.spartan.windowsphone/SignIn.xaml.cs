@@ -7,6 +7,9 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.IO;
+using System.IO.IsolatedStorage;
+using Windows.Storage;
 
 namespace com.spartan.windowsphone
 {
@@ -42,9 +45,54 @@ namespace com.spartan.windowsphone
             }
             else
             {
-                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-                //TODO ESCRIBIR ARCHIVO 
+                const string fileName = "SessionKey.txt";
+                
+                using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    /*
+                    if (myIsolatedStorage.FileExists(fileName))
+                    {
+                        myIsolatedStorage.DeleteFile(fileName);
+                    }
+                    var stream = myIsolatedStorage.CreateFile(fileName);
+                    using (StreamWriter isoStream = new StreamWriter(stream))
+                    {
+                        MessageBox.Show(res + " serv");
+                        isoStream.WriteLine(res);
+                    }*/
 
+                    string lines = res;
+
+                    // Write the string to a file.
+                    System.IO.StreamWriter file = new System.IO.StreamWriter("SessionKey.txt");
+                    file.WriteLine(lines);
+
+                    file.Close();
+
+                    String userId = "";
+                    try
+                    {
+                        var ResrouceStream = App.GetResourceStream(new Uri("SessionKey.txt", UriKind.Relative));
+                        Stream myFileStream = ResrouceStream.Stream;
+                        // Read the data.
+                        using (StreamReader streamReader = new StreamReader(myFileStream))
+                        {
+                            String line = streamReader.ReadLine();
+                            streamReader.Close();
+                            myFileStream.Close();
+                            userId = line.Trim();
+                            //MessageBox.Show(userId + " pag");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Loading data");
+                    }
+
+                }
+
+                //Ir a la pagina
+                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
             }
         }
         
